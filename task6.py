@@ -5,20 +5,24 @@ def s():
     stack = []
     ans = True
 
-    approve = [ ('(',')') ,  ('{','}') , ('[',']') ]
+    #approve = [ ('(',')') ,  ('{','}') , ('[',']') ]
+
+    mapa = {'(':')' , '[':']' , '{':'}'}
     for i in skobki:
 
-        if i in '({[':
+        if i in mapa.keys():
+
+
             stack.append(i)
 
-        elif i in ')}]' :
+        elif i in mapa.values() :
             if len(stack ) == 0:
                 ans = False
                 break
             a = stack.pop()
 
-            combo = (a,i)
-            if combo in approve :
+
+            if mapa[a] and mapa[a] == i:
                 continue
             # if a == '(' and i == ')':
             #     continue
