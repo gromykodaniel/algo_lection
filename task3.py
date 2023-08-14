@@ -3,9 +3,9 @@
 def s():
     sl = list(map(int , input().split() ))
 
-    n = len(sl)
 
-    for i in range( 1 , n):
+
+    for i in range( 1 , len(sl)):
 
         l = i - 1
         now = sl[i]
